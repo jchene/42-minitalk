@@ -6,7 +6,7 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:41:44 by jchene            #+#    #+#             */
-/*   Updated: 2021/09/30 04:27:05 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 21:22:30 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,22 @@ void	decode(void)
 		power = power * 2;
 		i++;
 	}
-	if (c == 0)
-		write(1, "\n", 1);
-	else
-		write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void	get_sig(int sig)
+void	get_sig(int sig, siginfo_t *info, void *context)
 {
 	(void)sig;
+	(void)context;
 	if (sig == 10)
 		get_stack()->chr[get_stack()->bit] = '1';
-	else
+	else if (sig == 12)
 		get_stack()->chr[get_stack()->bit] = '0';
+	else
+		return;
 	get_stack()->bit++;
+	usleep(250);
+	kill(info->si_pid, SIGUSR1);
 	if (get_stack()->bit >= 7)
 	{
 		get_stack()->bit = 0;
@@ -60,17 +62,19 @@ void	get_sig(int sig)
 	}
 }
 
-int		main(void)
+int						main(void)
 {
-	struct		sigaction sa;
+	struct sigaction	sa;
 
+	sa.sa_sigaction = (void *)get_sig;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_SIGINFO;
-	sa.sa_handler = &get_sig;
 	get_stack()->bit = 0;
 	ft_putnbr(getpid());
 	ft_putchar('\n');
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
-	while(1);
+	while (1)
+		pause();
+	return (0);
 }

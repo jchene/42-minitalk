@@ -6,29 +6,30 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 01:03:29 by jchene            #+#    #+#             */
-/*   Updated: 2021/09/30 01:55:14 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 21:19:23 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./minitalk.h"
 
-void	ft_putchar(char c)
+void				ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
 
-void	ft_putstrn(char *str, int n)
+int					ft_putstrn(char *str, int n)
 {
-	int		i;
+	int				i;
 
 	i = 0;
 	while (i < n)
 		ft_putchar(str[i++]);
+	return (-1);
 }
 
-int		ft_strlen(char *str)
+int					ft_strlen(char *str)
 {
-	int		i;
+	int				i;
 
 	i = 0;
 	while (str[i])
@@ -36,7 +37,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_putnbr(int nb) {
+void				ft_putnbr(int nb) {
 	if (nb < 0) 
 	{
 		ft_putchar('-');
@@ -51,7 +52,7 @@ void	ft_putnbr(int nb) {
 		ft_putchar(nb + 48);
 }
 
-void	ft_bzero(void *b, size_t n)
+void				ft_bzero(void *b, size_t n)
 {
 	unsigned char	*ptr;
 
