@@ -6,18 +6,18 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 01:03:29 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 22:09:41 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 22:42:11 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minitalk.h"
 
-void				ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
 
-int					ft_putstrn(char *str, int n)
+int	ft_putstrn(char *str, int n)
 {
 	int				i;
 
@@ -27,7 +27,7 @@ int					ft_putstrn(char *str, int n)
 	return (-1);
 }
 
-int					ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int				i;
 
@@ -37,13 +37,14 @@ int					ft_strlen(char *str)
 	return (i);
 }
 
-void				ft_putnbr(int nb) {
-	if (nb < 0) 
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
 	{
 		ft_putchar('-');
 		nb = -nb;
 	}
-	if (nb >= 10) 
+	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
 		nb = nb % 10;
@@ -52,11 +53,11 @@ void				ft_putnbr(int nb) {
 		ft_putchar(nb + 48);
 }
 
-void				ft_bzero(void *b, size_t n)
+void	ft_bzero(void *b, size_t n)
 {
 	unsigned char	*ptr;
 
-	ptr = (unsigned char*)b;
+	ptr = (unsigned char *)b;
 	while (n-- > 0)
 		*(ptr++) = 0;
 }

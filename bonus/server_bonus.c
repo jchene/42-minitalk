@@ -6,22 +6,22 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:41:44 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 22:09:35 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 22:41:00 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minitalk.h"
 
-t_stack		*get_stack(void)
+t_stack	*get_stack(void)
 {
-    static t_stack    stack;
+	static t_stack	stack;
 
-    if (stack.init == 0)
-    {
-        ft_bzero(&stack, sizeof(t_stack));
-        stack.init = 1;
-    }
-    return (&stack);
+	if (stack.init == 0)
+	{
+		ft_bzero(&stack, sizeof(t_stack));
+		stack.init = 1;
+	}
+	return (&stack);
 }
 
 void	decode(void)
@@ -51,7 +51,7 @@ void	get_sig(int sig, siginfo_t *info, void *context)
 	else if (sig == 12)
 		get_stack()->chr[get_stack()->bit] = '0';
 	else
-		return;
+		return ;
 	get_stack()->bit++;
 	usleep(250);
 	kill(info->si_pid, SIGUSR1);
@@ -62,7 +62,7 @@ void	get_sig(int sig, siginfo_t *info, void *context)
 	}
 }
 
-int						main(void)
+int	main(void)
 {
 	struct sigaction	sa;
 

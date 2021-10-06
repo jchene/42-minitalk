@@ -6,18 +6,18 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:42:47 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 22:09:31 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 22:38:46 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minitalk.h"
 
-void			nothing(int sig)
+void	nothing(int sig)
 {
 	(void)sig;
 }
 
-void			encode(int c, pid_t pid)
+void	encode(int c, pid_t pid)
 {
 	int			power;
 	int			old_c;
@@ -43,7 +43,7 @@ void			encode(int c, pid_t pid)
 	}
 }
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	pid_t	pid;
 	int		len;
