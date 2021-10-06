@@ -6,11 +6,11 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 01:03:29 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 21:19:23 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 22:09:41 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./minitalk.h"
+#include "../minitalk.h"
 
 void				ft_putchar(char c)
 {

@@ -6,11 +6,11 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:42:47 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 21:33:38 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 22:09:46 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./minitalk.h"
+#include "../minitalk.h"
 
 void			nothing(int sig)
 {

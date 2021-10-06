@@ -6,11 +6,11 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:41:44 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 22:01:05 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/06 22:09:35 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./minitalk.h"
+#include "../minitalk.h"
 
 t_stack		*get_stack(void)
 {
