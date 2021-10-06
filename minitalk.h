@@ -6,19 +6,19 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:27:11 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 21:21:13 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/07 01:05:07 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef			MINITALK_H
-# define		MINITALK_H
-# include		<stdio.h>
-# include		<unistd.h>
-# include		<stdlib.h>
-# include		<sys/types.h>
-# include		<signal.h>
+#ifndef MINITALK_H
+# define MINITALK_H
+# include	<stdio.h>
+# include	<unistd.h>
+# include	<stdlib.h>
+# include	<sys/types.h>
+# include	<signal.h>
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int			init;
 	char		chr[7];
