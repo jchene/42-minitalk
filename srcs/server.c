@@ -6,7 +6,7 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:41:44 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/06 22:43:46 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/07 02:42:22 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,13 @@ void	get_sig(int sig, siginfo_t *info, void *context)
 {
 	(void)sig;
 	(void)context;
-	if (sig == 10)
+	if (sig == SIGUSR1)
 		get_stack()->chr[get_stack()->bit] = '1';
-	else if (sig == 12)
+	else if (sig == SIGUSR2)
 		get_stack()->chr[get_stack()->bit] = '0';
 	else
 		return ;
 	get_stack()->bit++;
-	usleep(250);
 	kill(info->si_pid, SIGUSR1);
 	if (get_stack()->bit >= 7)
 	{
