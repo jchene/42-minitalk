@@ -1,49 +1,38 @@
-NAME		=	minitalk
-
 CC			=	gcc
-
 CLFAGS		=	-Werror -Wextra -Wall
-
 SANFLAGS	=	-g -fsanitize=address
-
 DEL			=	rm -f
 
+
 SERV_NAME	=	server
-
-CLNT_NAME	=	client
-
-
 SERV_SRCS	=	./srcs/server.c\
 				./lib/lib.c
-
-CLNT_SRCS	=	./srcs/client.c\
-				./lib/lib.c
-
 SERV_OBJ	=	$(SERV_SRCS:.c=.o)
-
-CLNT_OBJ	=	$(CLNT_SRCS:.c=.o)
-
-
 SERV_SRCS_B	=	./bonus/server_bonus.c\
 				./lib/lib.c
-
-CLNT_SRCS_B	=	./bonus/client_bonus.c\
-				./lib/lib.c
-
 SERV_OBJ_B	=	$(SERV_SRCS_B:.c=.o)
 
+
+CLNT_NAME	=	client
+CLNT_SRCS	=	./srcs/client.c\
+				./lib/lib.c
+CLNT_OBJ	=	$(CLNT_SRCS:.c=.o)
+CLNT_SRCS_B	=	./bonus/client_bonus.c\
+				./lib/lib.c
 CLNT_OBJ_B	=	$(CLNT_SRCS_B:.c=.o)
 
 
-
-$(NAME):		$(SERV_OBJ) $(CLNT_OBJ)
+$(SERV_NAME):	$(SERV_OBJ)
 				$(CC) -o $(SERV_NAME) $(SERV_SRCS) $(CLFAGS)
+
+$(CLNT_NAME):	$(CLNT_OBJ)
 				$(CC) -o $(CLNT_NAME) $(CLNT_SRCS) $(CLFAGS)
+
 
 %.o:			%.c
 				$(CC) $(CLFAGS) -o $@ -c $<
 
-all:			$(NAME)
+all:			$(SERV_NAME) $(CLNT_NAME)
 
 bonus:			$(SERV_OBJ_B) $(CLNT_OBJ_B)
 				$(CC) -o $(SERV_NAME) $(SERV_SRCS_B) $(CLFAGS)

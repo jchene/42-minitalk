@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:42:47 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/07 02:39:35 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/12 17:52:50 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minitalk.h"
 
-int		*msg_status(void)
+int	*msg_status(void)
 {
 	static int	status;
 	return (&status);
@@ -36,7 +36,7 @@ void	encode(int c, pid_t pid)
 	int			old_c;
 
 	old_c = c;
-	
+
 	while (c > 0)
 	{
 		usleep(1);
