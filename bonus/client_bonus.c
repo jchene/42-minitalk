@@ -6,7 +6,7 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:42:47 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/12 18:55:59 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/15 16:22:11 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	if (len == 0)
 		return (ft_putstrn("Empty string!\n", 14));
 	i = 0;
-	pid = atoi(argv[1]);
+	pid = small_atoi(argv[1]);
 	(*msg_status()) = 0;
 	signal(SIGUSR1, response);
 	while (i < len)

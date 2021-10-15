@@ -6,7 +6,7 @@
 /*   By: jchene <jchene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 01:27:11 by jchene            #+#    #+#             */
-/*   Updated: 2021/10/07 01:05:07 by jchene           ###   ########.fr       */
+/*   Updated: 2021/10/15 16:22:31 by jchene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ int				ft_putstrn(char *str, int n);
 int				ft_strlen(char *str);
 void			ft_putnbr(int nb);
 void			ft_bzero(void *b, size_t n);
+int				small_atoi(char *str);
 #endif
